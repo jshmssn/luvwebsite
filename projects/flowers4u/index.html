@@ -110,6 +110,17 @@
     </div>
 
     <script>
+        function checkAndClearSession() {
+            console.log("session is removed");
+            if (window.location.pathname.toLowerCase().endsWith('index.html')) {
+                localStorage.removeItem('userSession');
+                localStorage.removeItem('sessionTimestamp');
+            }
+        }
+
+        // Run check on page load
+        checkAndClearSession();
+
         let invalidAttempts = 0;
 
         document.getElementById('loginForm').addEventListener('submit', function (e) {
