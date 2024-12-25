@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="../../../images/heart.png">
+    <link rel="stylesheet" href="../css/next2.css">
+    <title>Luvv</title>
+</head>
+
+<body>
+    <script src="../js/session.js"></script>
+    <script src="../js/next2.js"></script>
+
+    <div class="card">
+        <div class="card-content">
+            <h3>You will find my message here, along with our photos together.</h3>
+        </div>
+    </div>
+    <div class="button-container">
+        <!-- Message button that opens modal and plays audio -->
+        <button id="messageButton" class="circle-button">
+            <i class="fa fa-comment"></i>
+        </button>
+        <button id="galleryButton" class="circle-button">
+            <i class="fa fa-image"></i>
+        </button>
+    </div>
+    <!-- Audio element -->
+    <audio id="myAudio" preload="auto">
+        <source src="../audio/palagi.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <audio id="myAudio2" preload="auto">
+        <source src="../audio/mabagal.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- MESSAGE MODAL -->
+    <div class="modal" id="messageModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" id="closeModal">&times;</span>
+                <h2>💖 My Sweet Message 💖</h2>
+            </div>
+            <div class="modal-body">
+                <p>Hey luvv! I just wanted to tell you how much you mean to me. Every day, I'm grateful to have someone
+                    as
+                    kind, caring, and beautiful as you in my life. You make everything brighter, and no matter what kind
+                    of
+                    day I'm having, just knowing you're there makes it a little easier. You always inspire me to be my
+                    best,
+                    and I honestly don't know where I'd be without you. I know this might be a bit ahead of myself, but
+                    that's truly how I feel, hihi.</p>
+                <p>Thank you for being you. Just thinking about you makes my heart flutter. I can't wait to keep
+                    building
+                    more memories with you. Here's to us and the wonderful future ahead of us. I'm so lucky to have met
+                    you
+                    in my life. I want to love you and keep making you smile forever. Your smile gives me joy, and it
+                    makes
+                    me happy. It feels like I'm in heaven when I see you smiling. I won't get tired of pursuing and
+                    courting
+                    you because every moment with you feels like a beautiful step toward forever. I promise to keep
+                    making
+                    you feel loved and cherished, to support you in everything you do, and to never stop showing you how
+                    much you mean to me. You are my heart, and I am yours. Iloveyouu.</p>
+            </div>
+        </div>
+    </div>
+    <!-- END OF MESSAGE MODAL -->
+
+    <!-- GALLERY MODAL -->
+    <div class="modal" id="galleryModal">
+        <div class="modal-content gallery-content">
+            <div class="modal-header">
+                <span class="close" id="closeGallery">&times;</span>
+                <h2>💝 Our Gallery 💝</h2>
+            </div>
+            <div class="modal-body gallery-grid">
+                <!-- The gallery items will be dynamically added here by JavaScript -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Fullscreen View -->
+    <div class="fullscreen-modal" id="fullscreenModal">
+        <span class="close-fullscreen" onclick="closeFullscreen()">&times;</span>
+        <img id="fullscreenImage" src="" alt="Fullscreen view">
+    </div>
+</body>
+
+</html>

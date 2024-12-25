@@ -1,0 +1,277 @@
+@import url("https://fonts.googleapis.com/css2?family=Dangrek&display=swap");
+
+html {
+  font-family: Dangrek;
+  height: 100%;
+}
+
+body {
+  background: rgb(255, 218, 232);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 20px;
+}
+
+.card {
+  background: rgb(242, 158, 190); /* Solid background for better visibility */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 900px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  margin-top: -20em;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-wrapper {
+  position: relative; /* Positioning context for the button */
+  width: 100%;
+  display: flex;
+  align-items: center; /* Align button and input horizontally */
+}
+
+.card-content input {
+  font-size: 18px;
+  padding: 10px 35px 10px 10px; /* Add extra padding on the right to make space for the button */
+  width: 23em;
+  border: 2px solid rgb(255, 218, 232);
+  border-radius: 5px;
+  background-color: rgb(255, 218, 232);
+  text-align: center;
+  color: #333;
+  box-sizing: border-box; /* Ensure padding is included in the width calculation */
+}
+
+.card-content input:focus {
+  outline: none;
+}
+
+.search-btn {
+  position: absolute;
+  right: 10px; /* Adjust to align the icon correctly */
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #666;
+}
+
+.search-btn i {
+  pointer-events: none;
+}
+
+/* Modern Modal Styling */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.modal-header h2 {
+  font-size: 24px;
+  margin: 0;
+  color: #444;
+  margin: auto;
+}
+
+.modal-header .close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #888;
+}
+
+.modal-header .close-btn:hover {
+  color: #000;
+}
+
+.modal-body {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.modal-body p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.modal-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+.modal-footer {
+  text-align: center;
+}
+
+.modal-footer .action-btn {
+  background: #d88f8f;
+  border: none;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-footer .action-btn:hover {
+  background: #ab6d68;
+}
+
+/* Carousel styles */
+.carousel {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.carousel-inner {
+  height: 100%;
+  position: relative;
+}
+
+.carousel-item {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-item.active {
+  opacity: 1;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.carousel-button {
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* Animation for modal */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .card-content {
+    flex-direction: row;
+  }
+
+  .card-content input {
+    font-size: 20px;
+  }
+
+  .input-wrapper {
+    width: 100%; /* Ensures the wrapper still takes up full width */
+    position: relative;
+  }
+
+  .search-btn {
+    font-size: 24px; /* Bigger button size for desktop */
+  }
+
+  .carousel {
+    width: 50%;
+    height: 400px;
+  }
+
+  
+.carousel-wrapper {
+    width: 1000px;
+}
+}
+
+@media (max-width: 768px) {
+  .card-content input {
+    font-size: 16px; /* Adjust font size for mobile devices */
+    padding: 10px 30px 10px 10px; /* Adjust padding for smaller screens */
+  }
+
+  .search-btn {
+    font-size: 18px; /* Adjust button size for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .card-content input {
+    font-size: 14px; /* Smaller font size for very small devices */
+    padding: 10px 25px 10px 10px; /* Adjust padding for very small screens */
+  }
+
+  .search-btn {
+    font-size: 16px; /* Smaller button size for very small devices */
+  }
+}
