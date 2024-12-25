@@ -12,7 +12,7 @@ function checkSession() {
       // Session doesn't exist or has expired
       localStorage.removeItem('userSession');
       localStorage.removeItem('sessionTimestamp');
-      window.location.href = "../index.html";
+      window.location.href = "../../index.html";
   }
 }
 
