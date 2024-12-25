@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<!--Hello dear friend.
+    Sorry if the code is messy and considered approached in a primitive way.
+    Did this at 3am on a school night.
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hi Luvv! &lt;3</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Dangrek&display=swap");
+
+      body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
+        overscroll-behavior: none; /* Prevent pull-to-refresh */
+      }
+
+      html {
+        height: -webkit-fill-available;
+      }
+
+      .x1 {
+        left: 5%;
+        -webkit-transform: scale(0.9);
+        -moz-transform: scale(0.9);
+        transform: scale(0.9);
+        opacity: 0.6;
+        -webkit-animation: moveclouds 15s linear infinite,
+          sideWays 4s ease-in-out infinite alternate;
+        -moz-animation: moveclouds 15s linear infinite,
+          sideWays 4s ease-in-out infinite alternate;
+      }
+      .x2 {
+        left: 25%;
+        -webkit-transform: scale(0.6);
+        -moz-transform: scale(0.6);
+        transform: scale(0.6);
+        opacity: 0.9;
+        -webkit-animation: moveclouds 25s linear infinite,
+          sideWays 5s ease-in-out infinite alternate;
+        -moz-animation: moveclouds 25s linear infinite,
+          sideWays 5s ease-in-out infinite alternate;
+      }
+      .x3 {
+        left: 55%;
+        -webkit-transform: scale(0.8);
+        -moz-transform: scale(0.8);
+        transform: scale(0.8);
+        opacity: 0.8;
+        -webkit-animation: moveclouds 20s linear infinite,
+          sideWays 4s ease-in-out infinite alternate;
+        -moz-animation: moveclouds 20s linear infinite,
+          sideWays 4s ease-in-out infinite alternate;
+      }
+      .x4 {
+        left: 72%;
+        -webkit-transform: scale(0.75);
+        -moz-transform: scale(0.75);
+        transform: scale(0.75);
+        opacity: 0.9;
+        -webkit-animation: moveclouds 18s linear infinite,
+          sideWays 2s ease-in-out infinite alternate;
+        -moz-animation: moveclouds 18s linear infinite,
+          sideWays 0zs ease-in-out infinite alternate;
+      }
+      .x5 {
+        left: 88%;
+        -webkit-transform: scale(0.8);
+        -moz-transform: scale(0.8);
+        transform: scale(0.8);
+        opacity: 0.3;
+        -webkit-animation: moveclouds 7s linear infinite,
+          sideWays 1s ease-in-out infinite alternate;
+        -moz-animation: moveclouds 7s linear infinite,
+          sideWays 1s ease-in-out infinite alternate;
+      }
+      .x6 {
+        left: 33%;
+        opacity: 1;
+        -webkit-animation: moveclouds 2s linear infinite,
+          swayWays 1s ease-in-out infinite alternate;
+        animation: moveclouds 10s linear infinite,
+          swayWays 9s ease-in-out infinite alternate;
+      }
+      @-webkit-keyframes moveclouds {
+        0% {
+          top: 500px;
+        }
+        100% {
+          top: -500px;
+        }
+      }
+      @keyframes moveclouds {
+        0% {
+          top: 500px;
+        }
+        100% {
+          top: -500px;
+        }
+      }
+      @-webkit-keyframes sideWays {
+        0% {
+          margin-left: 0px;
+        }
+        100% {
+          margin-left: 50px;
+        }
+      }
+      @keyframes sideWays {
+        0% {
+          margin-left: 0px;
+        }
+        100% {
+          margin-left: 50px;
+        }
+      }
+      @-keyframes swayWays {
+        0% {
+          transform: rotate(12deg);
+          left: -0.3%;
+        }
+        33% {
+          transform: rotate(-2deg);
+          left: 0.7%;
+        }
+        100% {
+          transform: rotate(0deg);
+          left: -12%;
+        }
+      }
+      /* //  HEART CODE */
+      .altheart {
+        background: url(http://static.indigoimages.ca/2016/shop/113439_img25_twotoneheart.png)
+          no-repeat center;
+        width: 24px;
+        height: 21px;
+        position: relative;
+        display: block;
+      }
+      .heart {
+        position: relative;
+      }
+      .heart:before,
+      .heart:after {
+        position: absolute;
+        content: "";
+        left: 18px;
+        top: 0;
+        width: 18px;
+        height: 30px;
+        background: #cc2022;
+        -moz-border-radius: 20px 50% 0 0;
+        border-radius: 30px 30px 0 0;
+        -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        -webkit-transform-origin: 0 100%;
+        -ms-transform-origin: 0 100%;
+        transform-origin: 0 100%;
+      }
+      .heart:after {
+        left: 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        -webkit-transform-origin: 100% 100%;
+        -ms-transform-origin: 100% 100%;
+        transform-origin: 100% 100%;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .wrapper {
+        height: 100vh;
+        background-color: rgb(213, 53, 53);
+        text-align: center;
+        margin: 0 auto;
+        overflow: hidden;
+        user-select: none;
+      }
+      .button,
+      .text,
+      .circ {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .button {
+        background-color: #cbb2ff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 22px;
+        transition: 1200ms ease-out;
+        width: 200px;
+        height: 100px;
+        border-radius: 12px;
+      }
+      .circ {
+        width: 0px;
+        height: 0px;
+        border-radius: 1000px;
+        background-color: aqua;
+        transition: 1200ms;
+      }
+      .inc {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+      }
+      #bg1 {
+        background-color: #ff009e;
+      }
+      #bg2 {
+        background-color: #ff819f;
+      }
+      #bg3 {
+        background-color: #ffb3d9;
+      }
+      #bg4 {
+        background-color: #c0608e;
+      }
+      #bg5 {
+        background-color: #50a2f5;
+      }
+      #bg6 {
+        background-color: #d06dee;
+      }
+      #bg7 {
+        background-color: #6a66e7;
+      }
+      #bg8 {
+        background-color: #50a2f5;
+      }
+      #bg9 {
+        background-color: #79bcff;
+      }
+      #bg10 {
+        background-color: #1a74cd;
+      }
+      #bg11 {
+        background-color: #33d3d3;
+      }
+      #bg12 {
+        background-color: #79ffd0;
+      }
+      #bg13 {
+        background-color: #5ad4a0;
+      }
+      .hide {
+        font-size: 0px;
+        opacity: 0%;
+      }
+      .text {
+        transition: 1200ms;
+        font-size: 24px;
+        font-family: "Dangrek";
+        color: rgb(42, 42, 42);
+      }
+      .nocolor {
+        background-color: #4a347800;
+      }
+      .container {
+        z-index: 100;
+      }
+      audio {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="btn button">
+        <div class="bg btn circ"></div>
+        <div class="bg circ" id="bg2"></div>
+        <div class="bg circ" id="bg3"></div>
+        <div class="bg circ" id="bg4"></div>
+        <div class="bg circ" id="bg5"></div>
+        <div class="bg circ" id="bg6"></div>
+        <div class="bg circ" id="bg7"></div>
+        <div class="bg circ" id="bg8"></div>
+        <div class="bg circ" id="bg9"></div>
+        <div class="bg circ" id="bg10"></div>
+        <div class="bg circ" id="bg11"></div>
+        <div class="bg circ" id="bg12"></div>
+        <div class="bg circ" id="bg13"></div>
+        <p class="text">Click Me!</p>
+        <p class="text hide">Hi Luv</p>
+        <p class="text hide">
+          It wasn’t long since I met you, but it felt as if time had folded in
+          on itself, bringing us together in a way that defied reason.
+        </p>
+        <p class="text hide">
+          From the instant our eyes met, it was as if the universe whispered a
+          secret only I could hear.
+        </p>
+        <p class="text hide">
+          Not love at first sight exactly, but something deeper --a silent
+          recognition, an echo of moments that hadn't yet happened but felt
+          like as if they always had.
+        </p>
+        <p class="text hide">
+          It was as if meeting you was turning a key in a lock I didn't
+          know existed.
+        </p>
+        <p class="text hide">
+          It was the soul saying "Oh, hello, it's you. It's always been you."
+        </p>
+        <p class="text hide">This moment, powerful and subtle, speaks of a connection that defies the logic of time.</p>
+        <p class="text hide">It isn’t just two lives intersecting; it’s two stories merging, realizing they were chapters of the same book.</p>
+        <p class="text hide">There’s a wordless certainty that says, "From now on, it’s going to be you".</p>
+        <p class="text hide">In every heartbeat, every shared silence, and every storm weathered.</p>
+        <p class="text hide">See you soon! Ingat po palagi.</p>
+        <p class="text hide">Mwaa!</p>
+      </div>
+      <div class="container">
+        <div class="hearty heart x1"></div>
+        <div class="hearty heart x2"></div>
+        <div class="hearty heart x3"></div>
+        <div class="hearty heart x4"></div>
+        <div class="hearty heart x5"></div>
+        <div class="hearty altheart x6"></div>
+      </div>
+    </div>
+    <audio id="audioPlayer" controls style="display: none">
+      <source src="audio/palagi.mp3" type="audio/mp3" />
+    </audio>
+  </body>
+</html>
+<script>
+  // Define isMobile first
+  const isMobile =
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    );
+
+  // Fixed fullscreen function
+  function toggleFullScreen() {
+    if (isMobile) {
+      // For mobile devices
+      try {
+        if (document.documentElement.requestFullscreen) {
+          document.documentElement.requestFullscreen();
+        } else if (document.documentElement.webkitRequestFullscreen) {
+          document.documentElement.webkitRequestFullscreen();
+        } else if (document.documentElement.mozRequestFullScreen) {
+          document.documentElement.mozRequestFullScreen();
+        }
+
+        // Try to lock screen orientation to portrait
+        if (screen.orientation && screen.orientation.lock) {
+          screen.orientation.lock("portrait").catch((err) => {
+            console.log("Orientation lock failed:", err);
+          });
+        }
+      } catch (error) {
+        console.log("Fullscreen error:", error);
+      }
+    } else {
+      // Desktop fullscreen code
+      if (!document.fullscreenElement) {
+        if (document.documentElement.requestFullscreen) {
+          document.documentElement.requestFullscreen();
+        } else if (document.documentElement.webkitRequestFullscreen) {
+          document.documentElement.webkitRequestFullscreen();
+        } else if (document.documentElement.msRequestFullscreen) {
+          document.documentElement.msRequestFullscreen();
+        }
+      }
+    }
+  }
+
+  // Mobile-specific handlers
+  if (isMobile) {
+    // Handle viewport height on mobile
+    function setViewportHeight() {
+      document.documentElement.style.setProperty(
+        "--vh",
+        `${window.innerHeight * 0.01}px`
+      );
+    }
+
+    window.addEventListener("resize", setViewportHeight);
+    window.addEventListener("orientationchange", setViewportHeight);
+    setViewportHeight();
+
+    // Hide address bar on load
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        window.scrollTo(0, 1);
+      }, 0);
+    });
+  }
+
+  const circ = document.querySelector(".btn");
+  const txt = document.querySelectorAll(".text");
+  const bg = document.querySelectorAll(".bg");
+  let i = 0;
+  let showingLast = false;
+  let lastClickTime = 0;
+  const COOLDOWN_DURATION = 1000;
+
+  // Click handler
+  circ.addEventListener("click", () => {
+    const currentTime = Date.now();
+
+    if (currentTime - lastClickTime < COOLDOWN_DURATION) {
+      return;
+    }
+
+    lastClickTime = currentTime;
+
+    // Try to enter fullscreen mode
+    toggleFullScreen();
+
+    // Play audio on button click
+    playAudio();
+
+    if (showingLast) {
+        window.location.reload(true);
+      return;
+    }
+
+    circ.classList.add("inc");
+    if (i < bg.length) {
+      bg[i].classList.add("inc");
+    }
+
+    if (i > 0) {
+      txt[i - 1].classList.add("hide");
+    }
+    if (i < txt.length) {
+      txt[i].classList.remove("hide");
+    }
+
+    i++;
+
+    if (i >= txt.length) {
+      showingLast = true;
+    }
+  });
+
+  // Audio playback function
+  function playAudio() {
+    const audio = document.getElementById("audioPlayer");
+    if (audio) {
+      audio
+        .play()
+        .then(() => {
+          console.log("Audio started playing on user click");
+        })
+        .catch((error) => {
+          console.log("Audio play error:", error);
+        });
+    }
+  }
+
+  // Fullscreen button handler
+  const fullscreenButton = document.getElementById("fullscreenButton");
+  if (fullscreenButton) {
+    fullscreenButton.addEventListener("click", toggleFullScreen);
+  }
+
+  // Initialize audio
+  document.addEventListener("DOMContentLoaded", () => {
+    const audio = document.getElementById("audioPlayer");
+
+    if (audio) {
+      // Check if the audio element exists
+      audio.addEventListener("click", playAudio);
+      window.addEventListener("load", playAudio);
+    }
+  });
+</script>

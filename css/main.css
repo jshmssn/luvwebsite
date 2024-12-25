@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Dangrek&display=swap");
+html {
+  font-family: Dangrek;
+}
+
+body {
+  background: rgb(255, 218, 232);
+}
+
+/* Fixed Footer Styles */
+footer {
+  background-color: rgb(205, 120, 152); /* Dark background */
+  color: white; /* White text */
+  padding: 20px 0; /* Padding for spacing */
+  text-align: center; /* Center align the text */
+  font-size: 14px; /* Adjust font size */
+  position: fixed; /* Fix the footer position */
+  bottom: 0; /* Align to the bottom of the viewport */
+  left: 0; /* Align to the left edge */
+  width: 100%; /* Span the entire width of the viewport */
+  z-index: 100; /* Ensure it stays on top of other elements */
+}
+
+footer .social-media {
+  margin-top: 10px; /* Space above social media links */
+}
+
+footer .social-media a {
+  color: white; /* White color for links */
+  margin: 0 10px; /* Space between links */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold; /* Bold links */
+}
+
+footer .social-media a:hover {
+  text-decoration: underline; /* Underline on hover */
+  color: #ffd700; /* Optional: Hover color (gold) */
+}
+
+/* Main content styles */
+.home-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-bottom: 90px;
+
+}
+
+/* Card container */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Card styles */
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Card image container */
+.card-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+/* Card content */
+.card-content {
+  padding: 15px;
+}
+
+.card-content h3 {
+  margin: 0 0 10px 0;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.card-content p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Link styles */
+.card-container a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Media Queries for different screen sizes */
+@media screen and (max-width: 768px) {
+  .card-container {
+      padding: 10px;
+      gap: 15px;
+  }
+  
+  .card-image {
+      height: 180px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .home-content {
+      padding: 10px;
+  }
+  
+  .card-content h3 {
+      font-size: 1.1rem;
+  }
+  
+  .card-content p {
+      font-size: 0.85rem;
+  }
+}

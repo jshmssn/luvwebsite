@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Luvv</title>
+    <link rel="shortcut icon" href="flowers/images/gift.png" type="image/x-icon">
+    <link rel="stylesheet" href="flowers/css/index.css">
+    <!-- Izitoast CSS and JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/izitoast/dist/css/iziToast.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/izitoast/dist/js/iziToast.min.js"></script>
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: rgb(38, 38, 38);
+            padding: 20px;
+        }
+
+        .login-container {
+            background-color: rgb(239, 239, 239);
+            padding: clamp(20px, 5vw, 40px);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(255, 255, 255, 0.5);
+            width: 100%;
+            max-width: 400px;
+            z-index: 999;
+        }
+
+        h2 {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: clamp(8px, 2vw, 12px);
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: clamp(14px, 2vw, 16px);
+        }
+
+        .login-container button {
+            width: 100%;
+            padding: clamp(10px, 2vw, 14px);
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: clamp(14px, 2vw, 16px);
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-container button:hover {
+            background-color: #45a049;
+        }
+
+        .login-container button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+        /* Media Queries */
+        @media screen and (max-width: 480px) {
+            .login-container {
+                padding: 15px;
+            }
+
+            .login-container input,
+            .login-container button {
+                margin: 8px 0;
+            }
+        }
+
+        @media screen and (max-height: 600px) {
+            body {
+                align-items: flex-start;
+                padding-top: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="night"></div>
+
+    <div class="login-container">
+        <h2>Enter our First Names</h2>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Enter the first name" required>
+            <input type="text" id="password" placeholder="Enter the first name" required>
+            <button type="submit">Go</button>
+        </form>
+    </div>
+
+    <script>
+        let invalidAttempts = 0;
+
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const submitButton = e.target.querySelector('button[type="submit"]');
+
+            submitButton.disabled = true;
+
+            if (username.toLowerCase() === password.toLowerCase()) {
+                iziToast.warning({
+                    title: 'Invalid',
+                    message: "Names shouldn't be the same.",
+                    position: 'topCenter',
+                    onClosing: function () {
+                        submitButton.disabled = false;
+                    }
+                });
+                return;
+            }
+
+            function handleLogin(username, password) {
+                const validUsers = ["Joshua", "joshua", "Shiena", "shiena"];
+                if (validUsers.includes(username) && validUsers.includes(password)) {
+                    iziToast.success({
+                        title: 'Success',
+                        message: 'Redirecting...',
+                        position: 'topCenter',
+                        timeout: 3000,
+                        onClosing: function () {
+                            window.location.href = "flowers/index.html";
+                        }
+                    });
+                } else {
+                    invalidAttempts++;
+
+                    let message = '';
+                    if (invalidAttempts === 1) {
+                        iziToast.destroy();
+                        message = 'Incorrect first names. Please try again.';
+                    } else if (invalidAttempts === 2) {
+                        iziToast.destroy();
+                        message = 'Still incorrect. Please double-check the names.';
+                    } else if (invalidAttempts >= 3) {
+                        iziToast.destroy();
+                        message = 'Multiple invalid attempts. Please wait a moment before trying again.';
+                        setTimeout(function () {
+                            invalidAttempts = 0;
+                            submitButton.disabled = false;
+                        }, 3000);
+                    }
+
+                    iziToast.warning({
+                        title: 'Invalid',
+                        message: message,
+                        position: 'topCenter',
+                        onClosing: function () {
+                            if (invalidAttempts < 3) {
+                                submitButton.disabled = false;
+                            }
+                        }
+                    });
+                }
+            }
+
+            handleLogin(username, password);
+        });
+    </script>
+</body>
+
+</html>
