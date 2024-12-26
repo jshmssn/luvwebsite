@@ -295,13 +295,13 @@ async function navigateImage(direction) {
         currentIndex = (currentIndex - 1 + totalImages) % totalImages; // Loop back to the last image
     }
 
-    console.log("Navigating to image index:", currentIndex); // Debug log
+    // console.log("Navigating to image index:", currentIndex); // Debug log
 
     // Try different formats until an image is found
     const imgFormats = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
     for (const format of imgFormats) {
         const imgPath = `../images/${currentIndex + 1}.${format}`;
-        console.log("Checking image path:", imgPath); // Debug log
+        // console.log("Checking image path:", imgPath); // Debug log
 
         try {
             const exists = await checkImageExists(imgPath);
@@ -349,7 +349,7 @@ function openFullscreen(element) {
         currentIndex = 0; // Default to the first image
     }
 
-    console.log("Opening fullscreen for image index:", currentIndex); // Debug log
+    // console.log("Opening fullscreen for image index:", currentIndex); // Debug log
 
     // Set the source of the fullscreen media
     fullscreenMedia.src = element.src;
